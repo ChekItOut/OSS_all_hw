@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 실습</title>
+    <style>
+        .div_position{
+            background-color: aquamarine;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: block;">display block</div>
+    <div style="display: inline;">display inline</div>
+    <div style="display: none;">display none</div> <!--안보이고 공간조차 차지하지 않는다.-->
+    <div style="visibility: collapse;">visibility</div> <!--안보이지만 공간은 차지하고 있다.-->
+
+   <!--position 실습-->
+    <div class="div_position" style="position: static;">static</div>
+    <div class="div_position" style="position: relative; left: 50px; top:100px">relative</div> <!--상대적으로 공간을 이동-->
+    <div class="div_position" style="position: fixed; left: 10px; top: 0px;">fixed</div> <!--지정한 공간에 고정됨-->
+    <div class="div_position" style="position: absolute; left: 50px; top: 50px;">absolute</div> <!--절대적인 위치에 지정-->
+    <div class="div_position" style="position: sticky;">sticky</div> 
+</body>
+</html>

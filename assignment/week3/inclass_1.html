@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="form_ok.html" method="POST">
+        <!--action은 정보를 제출한 url, method= 폼 데이터를 전송하는 방식-->
+        <label for="input_name">아름 : </label> <br/>
+
+        <input type = "text" id ="input_name" name="uname" placeholder="이름을 입력"/> <br/>
+
+        <label for="input_email">이메일 : </label> <br/>
+
+        <input type = "text" id ="input_email" name="email" placeholder="email 입력" required/> <br/>
+
+        <input type="submit" value="제출"/>
+
+
+        <fieldset>
+            <legend>필드셋의 라벨같은것</legend>
+            <label for="input_phone">전화번호: </label><br/>
+            <input type="text" name="phone" id="input_phone"/> <br/>
+            <label for="input_address">주소: </label><br/>
+            <input type="text" name="address" id="input_address"/> <br/>
+        </fieldset>
+
+        <div>
+            <label for="input_text">TEXT</label>
+            <input type="text" name="TEXT" id="input_text"/>
+            
+        </div>
+
+        <div>
+            <label for="input_number">NUMBER</label>
+            <input type="number" name="number" id="input_number"/>
+        </div>
+
+        <div>
+            <label for="input_password">PW</label>
+            <input type="password" name="password" id="input_password"/>
+        </div>
+
+        <div>
+            <label for="input_date">DATE</label>
+            <input type="date" name="date" id="input_date"/>
+        </div>
+
+        <div>
+            <label for="input_time">TIME</label>
+            <input type="time" name="time" id="input_time"/>
+        </div>
+
+        <div>
+            <label for="input_hidden">HIDDEN</label>
+            <input type="hidden" name="hidden" id="input_hidden"/>
+            <input type="text" name="hidden1" id="input_hidden1" style="display: none;"/>
+        </div>
+
+        <div>
+            <label for="input_radio_1">남</label>
+            <input type="radio" name="input_radio" id="input_radio_1;"/>
+        </div>
+
+        <div>
+            <label for="input_radio_2">여</label>
+            <input type="radio" name="input_radio" id="input_radio_2;"/>
+        </div>
+
+        <div>
+            <label for="input_radio_3">선택안함</label>
+            <input type="radio" name="input_radio" id="input_radio_3;"/>
+        </div>
+
+        <br/>
+
+        <div>
+            <label for="input_checkbox_1">축구</label>
+            <input type="checkbox" name="checkbox1" id="input_checkbox_1;"/>
+        </div>
+
+        <div>
+            <label for="input_checkbox_2">농구</label>
+            <input type="checkbox" name="checkbox2" id="input_checkbox_2;"/>
+        </div>
+
+        <br/>
+
+        <div>
+            <label for="input_file">축구</label>
+            <input type="file" name="file" id="input_file;"/>
+        </div>
+
+       
+        <input type="submit" value="제출"/>
+        <input type="reset" value="취소"/>
+
+        
+    </form>
+</body>
+</html>

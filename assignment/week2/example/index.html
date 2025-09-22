@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+
+    <style>
+        body{
+            background-color: rgb(27, 27, 29);
+        }
+        .border{
+            display: flex;
+            flex-direction:column;
+            gap: 6px;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(35, 35, 37);
+            padding-bottom: 90px;
+            padding-top: 40px;
+        }
+        .line{
+            border:0;    
+            width: 80%;            
+            height:1.5px;              
+            background:rgba(141, 141, 141, 0.25); 
+            margin: 12px auto;
+            margin-top: 0;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between; /* 요소들을 양 끝으로 정렬 */
+            align-items: flex-start; /* 요소들을 위쪽으로 정렬 */
+            width: 90%;
+
+        }
+        .division1{
+            width: 37%;
+            padding-left: 160px;
+        }
+        .division2{
+            width: 37%; 
+            padding-left: 130px;
+        }
+        .division3{
+            width: 37%; 
+            padding-left: 130px;
+        }
+
+        .division4{
+            width: 15%;
+            padding-left: 150px;
+            padding-right: 10px;
+            
+        }
+
+        .division5{
+            width: 37%; 
+            
+        }
+
+        .division6{
+            width: 15%;
+            padding-left: 100px;
+            padding-right: 10px
+           
+        }
+
+        .division7{
+            width: 37%; 
+        }
+
+        .division8{
+            width: 15%;
+            padding-left: 100px;
+            padding-right: 10px
+           
+        }
+
+        .division9{
+            width: 37%; 
+        }
+
+        .primary_button{
+            width: 130px;
+            height: 40px;
+            border-radius: 6px;
+            background-color:rgb(46, 84, 255);
+            display:flex;              
+            align-items:center; 
+            justify-content:center;
+        }
+
+        .primary_button:hover{
+            background-color:rgb(18, 18, 147);
+        }
+
+        .card1{
+            width: 37%;
+            padding-left: 160px; 
+                      
+        }
+
+        .card2{
+            width: 37%;
+            padding-left: 25px; 
+        }
+
+        .card3{
+            width: 37%;
+            padding-left: 25px; 
+            
+        }
+
+        .overlap1{
+            position: absolute;
+            left:230px;
+            top: 1360px;
+            font-size: x-large;
+            width:320px;
+        }
+
+        .icon1{
+            position: absolute;
+            left:400px;
+            top: 1565px
+        }
+
+        .overlap2{
+            position: absolute;
+            left:617px;
+            top: 1357px;
+            font-size: x-large;
+            width:320px;
+        }
+
+        .icon2{
+            position: absolute;
+            left:782px;
+            top: 1565px
+        }
+
+        .overlap3{
+            position: absolute;
+            left:1020px;
+            top: 1360px;
+            font-size: x-large;
+            width:320px;
+        }
+
+        .icon3{
+            position: absolute;
+            left:1180px;
+            top: 1565px
+        }
+
+        .div1{
+            width: 1%;
+            padding-left: 150px;
+            
+            
+        }
+
+        .div2{
+            width:15%;
+            
+            
+        }
+
+        .div3{
+            width: 1%;
+            
+        }
+
+        .div4{
+            width:15%;
+            
+        }
+
+        .div5{
+            width: 1%;
+            
+        }
+
+        .div6{
+            width:15%;
+            
+        }
+
+        .div7{
+            width: 1%;
+            
+        }
+
+        .div8{
+            width:15%;
+        }
+        
+        /*여기서부터 마지막 페이지 스타일*/
+        .div9{
+            width: 40%;
+            padding-left: 150px;
+            padding-top: 80px;
+        }
+        .div10{
+            width: 20%;
+            padding-top: 50px;
+        }
+
+        .div11{
+            width: 20%;
+            padding-top: 50px;
+        }
+
+        .primary_button2{
+            width: 150px;
+            height: 45px;
+            border-radius: 6px;
+            background-color:rgb(46, 84, 255);
+            display:flex;              
+            align-items:center; 
+            justify-content:center;
+        }
+
+        .primary_button2:hover{
+            background-color:rgb(18, 18, 147);
+        }
+    </style>
+</head>
+<body>
+    <div class="border">
+        <p style="font-size: xx-large; margin-bottom: 0; width: 33%; padding-left: 150px;">Columns with icons</p>
+        <div class="line"></div>
+        <div class="container">
+            <div class = "division1">
+                <img src="./code.png" alt = "image-1" width="80px">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.</p>
+                <a href ="" style="color: rgb(47, 96, 210);">Call to action</a>
+            </div>
+
+            <div class = "division2">
+                <img src="./file.png" alt = "image-2" width="80px">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.</p>
+                <a href ="" style="color: rgb(47, 96, 210);">Call to action</a>
+            </div>
+
+            <div class = "division3">
+                <img src="./eye.png" alt = "image-2" width="80px">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.</p>
+                <a href ="" style="color: rgb(47, 96, 210);">Call to action</a>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="border">
+        <p style="font-size: xx-large; margin-bottom: 0; width: 33%; padding-left: 150px;">Hanging icons</p>
+        <div class="line"></div>
+        <div class="container">
+
+            <div class = "division4">
+                <img src="./wallet.png" alt = "image-2" width="45px">
+            </div>
+
+            <div class = "dividion5">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.
+                </p>
+                <p class ="primary_button">Primary button</p>
+            </div>
+
+            <div class = "division6">
+                <img src="./chat.png" alt = "image-2" width="45px">
+            </div>
+
+            <div class = "dividion7">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.
+                </p>
+                <p class ="primary_button">Primary button</p>
+            </div>
+
+            <div class = "division8">
+                <img src="./adjust.png" alt = "image-2" width="40px">
+            </div>
+
+            <div class = "dividion9">
+                <p style="font-size: xx-large; margin-top: 10px;">Featured title</p>
+                <p style="line-height: 1.5; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. 
+                    We'll add onto it with another sentence and probably just keep going 
+                    until we run out of words.
+                </p>
+                <p class ="primary_button">Primary button</p>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="border">
+        <p style="font-size: xx-large; margin-bottom: 0; width: 33%; padding-left: 150px;">Custom cards</p>
+        <div class="line"></div>
+        <div class="container">
+            <div class="card1">
+                <img src="./moon.jpg" alt = "image-3" width="370px" style="border: 1px solid rgb(70, 70, 70); border-radius: 9px;">
+                <div class="overlap1">
+                    <h2>Short title, long jacket</h2>
+                </div>
+                <div class="icon1">🗓️ Earth 🕹️ 3d</div>
+            </div>
+
+
+            <div class="card2">
+                <img src="./flower.jpg" alt = "image-3" width="370px" style="border: 1px solid rgb(70, 70, 70); border-radius: 9px;">
+                <div class="overlap2">
+                    <h2>Much longer title that wraps to multiple lines</h2>
+                </div>
+                <div class="icon2">🗓️ Pakistan 🕹️ 4d</div>
+            </div>
+
+            <div class="card3">
+                <img src="./jellyfish.jpg" alt = "image-3" width="370px" style="border: 1px solid rgb(70, 70, 70); border-radius: 9px;">
+                <div class="overlap3">
+                    <h2>Another longer title belongs here</h2>
+                </div>
+                <div class="icon3">🗓️ California 🕹️ 5d</div>
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="border">
+        <p style="font-size: xx-large; margin-bottom: 0; width: 33%; padding-left: 150px;">Icon grid</p>
+        <div class="line"></div>
+        <div class="container">
+
+            <div class="div1">
+                <img src="chart (1).png" alt = "image-3" width="28px" style="padding-bottom: 108px; padding-top: 20px;">
+                <img src="chart (2).png" alt = "image-3" width="28px;">
+            </div>
+
+            <div class="div2">
+                <h2 style="margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+                <h2 style="padding-top: 14px; margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="div3">
+                <img src="gallery.png" alt = "image-3" width="28px" style="padding-bottom: 108px; padding-top: 20px;">
+                <img src="time.png" alt = "image-3" width="28px">
+            </div>
+
+            <div class="div4">
+                <h2 style="margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+                <h2 style="padding-top: 14px; margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="div5">
+                <img src="checklist.png" alt = "image-3" width="28px" style="padding-bottom: 108px; padding-top: 20px;">
+                <img src="presentation.png" alt = "image-3" width="28px">
+            </div>
+
+            <div class="div6">
+                <h2 style="margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+                <h2 style="padding-top: 14px; margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="div7">
+                <img src="chart.png" alt = "image-3" width="28px" style="padding-bottom: 108px; padding-top: 20px;">
+                <img src="flowchart.png" alt = "image-3" width="28px">
+            </div>
+
+            <div class="div8">
+                <h2 style="margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+                <h2 style="padding-top: 14px; margin-bottom: 4px;">Featured title</h2>
+                <p style="line-height: 1.5; margin-top: 4px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="border">
+        <p style="font-size: xx-large; margin-bottom: 0; width: 33%; padding-left: 150px;">Features with title</p>
+        <div class="line"></div>
+        <div class="container">
+            <div class="div9">
+                <h1>Left-aligned title explaining these awesome features</h1>
+                <p style="line-height: 1.7; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <p class="primary_button2">Primary button</p>
+            </div>
+
+            <div class="div10">
+                <img src="hotel.png" alt="image-4" width="50" style="margin-bottom: 3px;">
+                <h2 style="margin-top: 0; margin-bottom: 5px;">Featured title</h2>
+                <p style="line-height: 1.7; margin-top: 5px; margin-bottom: 50px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+
+                <img src="email.png" alt="image-4" width="50">
+                <h2 style="margin-top: 0; margin-bottom: 5px;">Featured title</h2>
+                <p style="line-height: 1.7; margin-top: 5px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="div11">
+                <img src="location.png" alt="image-4" width="50"  style="margin-bottom: 3px;">
+                <h2 style="margin-top: 0; margin-bottom: 5px;">Featured title</h2>
+                <p style="line-height: 1.7; margin-top: 5px; margin-bottom: 50px; color: rgb(182, 184, 189); ">Paragraph of text beneath the heading to explain the heading.</p>
+
+                <img src="lock.png" alt="image-4" width="50">
+                <h2 style="margin-top: 0; margin-bottom: 5px;">Featured title</h2>
+                <p style="line-height: 1.7; margin-top: 5px; color: rgb(182, 184, 189);">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

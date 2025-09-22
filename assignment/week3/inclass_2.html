@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>더셈 계산기</h4>
+    <form>
+        <input type='text' size=2 name="num1" id="num1" pattern="\d*">
+        +
+        <input type="text" size="2" name="num2" id="num2" pattern="\d*">
+        <button onclick="add()" type="button"> = </button>
+        <input type="text" size="2" name="result" id="result" readonly>
+        <br><br>
+        <input type="reset" value="초기화">
+    </form>
+
+    <script>
+        
+        function add(){
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+
+            var sum = parseInt(num1.value) + parseInt(num2.value);
+            result.value = sum;
+        }
+
+        alert("안녕하세요!");
+        console.log("안녕하세요. console.log입니다.");
+        let test_1 = 0; //정수형, 스트링형 상관없음 .
+        alert(test_1);
+        test_1 = "0이었던것..";
+        alert(test_1);
+
+        var test_2 = 1; //var은 한번 선언한 변수를 다시 선언가능. let은 불가.
+        var test_2 = 2;
+
+        const test3 = 0; //상수
+        let sum = 0;
+        for (let i=1; i<50; i++){
+            sum += i;
+
+        }
+        console.log(sum);   
+        let time_a = 0;
+        setTimeout(function(){alert("3초 지남?")}, 3000); //3초임
+        setInterval(function() {console.log("시간이 너무 빨라요! : " + time_a++);}, 500); //0.5초마다 콘솔에 반복출력
+        
+        
+        /*let result_confirm = confirm("Yes or No?");
+        alert(result_confirm); 
+
+        prompt("입력해죠!!");*/
+
+        //창크기 조절
+        
+        let innerWidth = window.innerWidth;
+        let outerWidth = window.outerWidth;
+        alert(innerWidth + "||" + outerWidth);
+
+        //location.href = "https://online.handong.edu/"; //파일 열자마자 해당주소로 이동
+        
+        let obj = {
+            phone: "01027947071",
+            address: "경북포항",
+            
+
+            array1 : [
+                {a: "b"}, {a: "c"}
+            ]
+            
+        }; //객체생성
+        obj.name = "이름!!";
+        alert(obj.name);
+        alert(obj.phone);
+
+        obj["title"] = "제목";
+        alert(obj["title"]);
+    </script>
+</body>
+</html>
