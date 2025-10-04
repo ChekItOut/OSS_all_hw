@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> <!--부트스트랩에서 css 가져옴-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> <!--부트스트랩에서 js 가져옴-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <link rel="stylesheet" href="my_2.css" />
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 0);
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin-top: 20px;     
+        }
+        .transparent{
+            display: none;
+        }
+        
+        input[name=myInput]{
+            padding: 6px;
+            width: 20%;
+            border-radius: 5px;
+            
+        }
+        button[name=submit_button]{
+            color: white;
+            background-color: rgb(34, 95, 236);
+            border: 0px;
+            width: 100px;
+        }
+        button[name=cancel_button]{
+            color: white;
+            background-color: rgb(232, 45, 98);
+            border: 0px;
+            width: 100px;
+        }
+
+        input[type=text]{
+            width: 100%;
+            box-sizing: border-box;
+            height: auto;
+            border: 1px solid rgb(211, 211, 211);
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        button:hover{
+            background-color: rgb(95, 95, 95);
+        }
+
+        .Word{
+            margin-bottom: 20px;
+        }
+        .Meaning{
+            margin-bottom: 20px;
+        }
+        .Date{
+            margin-bottom: 20px;
+        }
+        .Level{
+            margin-bottom: 20px;
+        }
+        .POS{
+            margin-bottom: 20px;
+        }
+        .Synonym{
+            margin-bottom: 20px;
+        }
+        .Button{
+            display: flex;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="header">
+            <div class="left">
+                <h1>📚 Add new Word to the List</h1>
+            </div>
+
+            <div class="right">
+                <p style="margin-bottom: 0;">🌎Master new words with My Vocab! 
+                Track your progress to expand your vocabulary. 
+                    Improve your vocabulary, one word at a time.</p>
+            </div>
+        </div>
+        
+        <hr/>
+        <div class="Word">
+            <label for="word">🔻Input New Word</label> <br/>
+            <input type="text" id="word" name="word" placeholder="input new word" required>
+        </div>
+        
+        <div class="Meaning">
+            <label for="meaning">🔻Input Meaning of the Word</label> <br/>
+            <input type="text" id="meaning" name="meaning" placeholder="input meaning" required>
+        </div>
+        
+        <div class="Date">
+            <label for="date">💻Date of Addition</label> <br/>
+            <input type="date" id="date" name="date" required>
+        </div>
+        
+        <div class="Level">
+            <label for="level">🎓 Choose Level of the word</label> <br/>
+            <select id="level" name="level" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="1">Very Easy</option>
+                <option value="2">Easy</option>
+                <option value="3">SoSo</option>
+                <option value="4">Hard</option>
+                <option value="5">Very Hard</option>
+            </select>
+        </div>
+
+        <div class="POS">
+            <label for="pos">What's the Part of Speech?</label> <br/>
+            <input type="text" id="pos" name="pos" required>
+        </div>
+
+        <div class="Synonym">
+            <label for="synonym">Synonym of the Word</label> <br/>
+            <input type="text" id="synonym" name="synonym" required>
+        </div>
+
+        <div class="Button" style="margin-bottom: 10px;">
+            <button id="submit_button" name="submit_button" style="margin-right: 10px;">제출</button>
+            <button type="button" name="cancel_button" id="cancel_button">취소</button>
+        </div>
+
+        <p class="transparent">🌎Master new words with My Vocab! 
+        Track your progress to expand your vocabulary. 
+        Improve your vocabulary, one word at a time.</p>
+    </div>
+    
+    <script>
+        let submit_button = document.getElementById("submit_button");
+        submit_button.addEventListener("click", function(){       
+            
+            let word = document.getElementById("word").value;
+            let meaning = document.getElementById("meaning").value;
+            let date = document.getElementById("date").value;
+            let level = document.getElementById("level").value;
+            let pos = document.getElementById("pos").value;
+            let synonym = document.getElementById("synonym").value;
+            
+            if(word.trim() !== "" && meaning.trim() !== "" && date.trim() !== "" && level.trim() !== ""  && pos.trim() !== ""  && synonym.trim() !== "" ){
+                alert("게시물이 추가됩니다!");
+                
+
+            } else {
+                alert("입력되지 않은 사항이 있습니다!");
+            }
+        });
+
+        let cancelButton = document.getElementById("cancel_button");
+        cancelButton.addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="my_1.css" />
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Georgia, Times, 'Times New Roman', serif;
+        }
+        .navbar.navbar-inverse{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            margin-bottom: 0px;
+        }
+        .brand{
+            width: 40%;
+            display: flex;
+            margin-left: 40px;
+        }
+        .brand h2{
+            margin-left: 8px;
+            margin-top: 5px;
+        }
+        .navbar-right{
+            display: flex;
+            margin-right: 50px;
+        }
+        .Home{
+            background-color:rgb(46, 84, 255);
+            border-radius: 10px;
+            height: 45px;
+            width: 90px;
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            text-decoration: none;
+        }
+        .discription{
+            margin-left: 10px; 
+        }
+        .list_header{
+            display: flex;
+        }
+        .add{
+            border-radius: 5px;
+            color: white;
+            border: 0px;
+            height: 22px;
+            width: 50px;
+            font-size: xx-small;
+            margin-top: 3px;
+            margin-right: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            text-decoration: none;
+        }
+
+        button[name=delete_button]{
+            background-color:rgb(255, 0, 0);
+            border-radius: 5px;
+            color: white;
+            border: 0px;
+            height: 22px;
+            width: 50px;
+            font-size: xx-small;
+            margin-top: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        
+        
+        /* 새로운 스타일 추가: 단어 목록을 위한 스타일 */
+        #word-list-container {
+            margin: 20px 40px;
+        }
+        .word-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            height: auto;
+        }
+        .word-item strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .word-details {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .word-details span {
+            margin-right: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="brand">
+                <h2 style="font-family: 'Times New Roman', Times, serif;">✨My Vocab!</h2>
+            </div>
+            <div class="navbar-right">
+                <a href="index.html" class="Home">Home</a>
+                <div class="discription">
+                    <p style="margin: 0;">Improve your vocabulary</p>
+                    <p style="margin: 0;">with My Vocab!✨</p>
+                </div>
+            </div>
+        </nav>
+
+        <hr style="margin-top: 5px;">
+
+        <div class="list_header">
+            <h4 style="margin-right: 10px;">Word List</h4>
+            <a href="add.html" class="add" style="background-color:rgb(46, 84, 255);">추가</a>
+            <a href="edit.html" class="add" style="background-color:rgb(60, 198, 25);">수정</a>
+            
+            <a href="index.html" class="add" style="background-color:rgb(195, 0, 213);">목록</a>
+            <button id="delete_button" name="delete_button">삭제</button>
+        </div>
+        
+        <div id="word-list-container">
+            <div class="word-item">
+                <strong>Eat</strong>
+                <div class="word-details">
+                    <span>Meaning: 먹다</span>
+                    <span>Date of Addition: 25.10.03</span>
+                    <span>Level: Very Easy</span>
+                    <span>Part of Speech: Verb</span>
+                    <span>Synonym: Have</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Walk</strong>
+                <div class="word-details">
+                    <span>Meaning: 걷다</span>
+                    <span>Date of Addition: 25.10.01</span>
+                    <span>Level: Very Easy</span>
+                    <span>Part of Speech: Verb</span>
+                    <span>Synonym: stroll, trek, hike</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Study</strong>
+                <div class="word-details">
+                    <span>Meaning: 공부하다</span>
+                    <span>Date of Addition: 25.09.03</span>
+                    <span>Level: Very Easy</span>
+                    <span>Part of Speech: Verb</span>
+                    <span>Synonym: learn</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Ephemeral</strong>
+                <div class="word-details">
+                    <span>Meaning: 순간적인</span>
+                    <span>Date of Addition: 25.10.01</span>
+                    <span>Level: Very Hard</span>
+                    <span>Part of Speech: adjective</span>
+                    <span>Synonym: temporary</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Benevolent</strong>
+                <div class="word-details">
+                    <span>Meaning: 자비로운</span>
+                    <span>Date of Addition: 25.09.13</span>
+                    <span>Level: Hard</span>
+                    <span>Part of Speech: adjective</span>
+                    <span>Synonym: kind, mercyful</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Cold</strong>
+                <div class="word-details">
+                    <span>Meaning: 추운</span>
+                    <span>Date of Addition: 25.10.03</span>
+                    <span>Level: Easy</span>
+                    <span>Part of Speech: adjective</span>
+                    <span>Synonym: freezing, chilly</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Exponential</strong>
+                <div class="word-details">
+                    <span>Meaning: 기하급수적인</span>
+                    <span>Date of Addition: 25.10.05</span>
+                    <span>Level: Soso</span>
+                    <span>Part of Speech: adjective</span>
+                    <span>Synonym: rapidly</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Big</strong>
+                <div class="word-details">
+                    <span>Meaning: 큰</span>
+                    <span>Date of Addition: 25.09.03</span>
+                    <span>Level: Very Easy</span>
+                    <span>Part of Speech: adjective</span>
+                    <span>Synonym: huge</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>Quick</strong>
+                <div class="word-details">
+                    <span>Meaning: 재빨리</span>
+                    <span>Date of Addition: 25.10.03</span>
+                    <span>Level: Easy</span>
+                    <span>Part of Speech: adverb</span>
+                    <span>Synonym: fast</span>
+                </div>
+            </div>
+
+            <div class="word-item">
+                <strong>complete</strong>
+                <div class="word-details">
+                    <span>Meaning: 끝내다</span>
+                    <span>Date of Addition: 25.10.03</span>
+                    <span>Level: Soso</span>
+                    <span>Part of Speech: Verb</span>
+                    <span>Synonym: finish</span>
+                </div>
+            </div>
+
+        
+
+        </div>
+    </div>
+    
+    <script>
+        let delete_button =  document.getElementById("delete_button");
+        delete_button.addEventListener("click", function(){
+            confirm("게시물을 삭제할까요?")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+@media (max-width:700px){
+    .navbar.navbar-inverse .brand{
+        width: 100%;
+        margin-left: 0;
+    }
+    .Home{
+        height: 40px;
+        width: 70px;
+    }
+    .word-details{
+        display: flex;
+        flex-direction: column;
+    }
+}

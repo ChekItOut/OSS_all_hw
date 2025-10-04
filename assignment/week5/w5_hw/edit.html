@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="my_2.css" />
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Georgia, Times, 'Times New Roman', serif;
+        }
+        .navbar.navbar-inverse{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            margin-bottom: 0px;
+        }
+        .brand{
+            width: 40%;
+            display: flex;
+            margin-left: 40px;
+        }
+        .brand h2{
+            margin-left: 8px;
+            margin-top: 5px;
+        }
+        .navbar-right{
+            display: flex;
+            margin-right: 50px;
+        }
+        .Home{
+            background-color:rgb(46, 84, 255);
+            border-radius: 10px;
+            height: 45px;
+            width: 90px;
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            text-decoration: none;
+        }
+        .discription{
+            margin-left: 10px; 
+        }
+        .list_header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .right{
+            width: 60%;
+            font-size: small;
+            margin-left: 150px;
+            margin-bottom: 10px;
+        }
+        .left{
+            width: 50%;
+            
+            display: flex;
+            flex-direction: row;
+        }
+        .add{
+            border-radius: 5px;
+            color: white;
+            border: 0px;
+            height: 22px;
+            width: 50px;
+            font-size: xx-small;
+            margin-top: 3px;
+            margin-right: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            text-decoration: none;
+        }
+
+        button[name=ok_button]{
+            background-color:rgb(43, 0, 255);
+            border-radius: 5px;
+            color: white;
+            border: 0px;
+            height: 22px;
+            width: 50px;
+            font-size: xx-small;
+            margin-top: 3px;
+            margin-right: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        
+        
+       
+        
+        .word-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            
+            width: 100%;
+        }
+      
+        input[type=text]{
+            padding: 6px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .transparent{
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="brand">
+                <h2 style="font-family: 'Times New Roman', Times, serif;">✨My Vocab!</h2>
+            </div>
+            <div class="navbar-right">
+                <a href="index.html" class="Home">Home</a>
+                <div class="discription">
+                    <p style="margin: 0;">Improve your vocabulary</p>
+                    <p style="margin: 0;">with My Vocab!✨</p>
+                </div>
+            </div>
+        </nav>
+
+        <hr style="margin-top: 5px;">
+
+        <div class="list_header">
+            <div class="left">
+                <h4 style="margin-right: 10px;">Change the Word</h4>
+                <button id="ok_button" name="ok_button">확인</button>
+                <a href="index.html" class="add" style="background-color:rgb(255, 46, 46);">취소</a>
+            </div>
+
+            <div class="right">
+                <p style="margin-bottom: 0;">🌎Master new words with My Vocab! 
+                Track your progress to expand your vocabulary effortlessly. 
+                    Improve your vocabulary, one word at a time.</p>
+            </div>
+            
+            
+        </div>
+        
+        <div id="word-list-container">
+            <div class="word-item">
+                <div class="Word">
+                    <label for="word">🔻Word to change</label> <br/>
+                    <input type="text" id="word" name="word" placeholder="input new word" required>
+                </div>
+
+                <div class="Meaning">
+                    <label for="meaning">🔻Meaning</label> <br/>
+                    <input type="text" id="meaning" name="meaning" placeholder="input meaning" required>
+                </div>
+
+                <div class="Date" style="margin-bottom: 10px;">
+                    <label for="date">💻Date</label> <br/>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="Level" style="margin-bottom: 10px;">
+                    <label for="level">🎓Level/label> <br/>
+                    <select id="level" name="level" required>
+                        <option value="" disabled selected>Select one</option>
+                        <option value="1">Very Easy</option>
+                        <option value="2">Easy</option>
+                        <option value="3">SoSo</option>
+                        <option value="4">Hard</option>
+                        <option value="5">Very Hard</option>
+                    </select>
+                </div>
+
+                <div class="POS">
+                    <label for="pos">🔻Part of Speech</label> <br/>
+                    <input type="text" id="pos" name="pos">
+                </div>
+
+                <div class="Synonym">
+                    <label for="synonym">🔻Synonym</label> <br/>
+                    <input type="text" id="synonym" name="synonym">
+                </div>
+            </div>
+        </div>
+        <p class="transparent" style="margin-bottom: 0;">🌎Master new words with My Vocab! 
+    Track your progress to expand your vocabulary effortlessly. 
+    Improve your vocabulary, one word at a time.</p>
+    </div>
+
+    
+    
+    
+    
+    <script>
+        let ok_button =  document.getElementById("ok_button");
+        ok_button.addEventListener("click", function(){
+
+            let word = document.getElementById("word").value;
+            let meaning = document.getElementById("meaning").value;
+            let date = document.getElementById("date").value;
+            let level = document.getElementById("level").value;
+            let pos = document.getElementById("pos").value;
+            let synonym = document.getElementById("synonym").value;
+            
+            if(word.trim() !== "" && meaning.trim() !== "" && date.trim() !== "" && level.trim() !== ""){
+                
+                if(confirm("게시물을 수정할까요??")){
+                    alert("수정되었습니다.")
+                }else{
+                    alert("수정 취소")
+                }
+
+            } else {
+                alert("입력되지 않은 사항이 있습니다!");
+            }
+
+            
+        })
+
+
+    </script>
+</body>
+</html>
