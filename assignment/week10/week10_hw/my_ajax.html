@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-11-03</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style>
+        body{
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥학생정보 관리🔥</h1>
+    <h3>입력한 학생 목록들</h3>
+    <div id="div_list1"></div>
+    <button id="btn_list1">학생 목록 조회</button>
+    <button id="btn_add1">학생 입력하기</button>
+    <button id="btn_update1">학생 수정하기</button>
+    <button id="btn_delete1">학생 삭제하기</button>
+    <br/><br/>
+
+    id : <input type="text" id="input_id1" /><br/>
+    name : <input type="text" id="input_name1" /><br/>
+    age : <input type="number" id="input_age1" /><br/>
+    gender : <input type="text" id="input_gender1" /><br/>
+
+    
+    
+    <script>
+        $(function(){
+            $("#btn_delete1").click(function(){
+                alert("학생을 삭제하시겠습니까??");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("DELETE","http://localhost:3000/students/" + $("#input_id1").val());
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        alert("삭제가 완료되었습니다.");
+                        $("#btn_list1").click(); 
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_update1").click(function(){
+                alert("학생정보를 Update 하시겠습니까?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("PUT","http://localhost:3000/students/" + $("#input_id1").val());
+                xhr.setRequestHeader("content-type","application/json");
+                let data = { 
+                    name: $("#input_name1").val(), 
+                    age: $("#input_age1").val(),
+                    gender: $("#input_gender1").val()
+                };
+                xhr.send(JSON.stringify(data));
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        alert("학생정보 수정완료:\n" + JSON.stringify(res, null, 2));
+                        $("#btn_list1").click();
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_add1").click(function(){
+                alert("학생을 추가하시겠습니까?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST","http://localhost:3000/students");
+                xhr.setRequestHeader("content-type","application/json");
+                let data = { 
+                    name: $("#input_name1").val(), 
+                    age: $("#input_age1").val(),
+                    gender: $("#input_gender1").val()
+                };
+                xhr.send(JSON.stringify(data));
+                xhr.onload = () => {
+                    if (xhr.status === 201) {
+                        let res = JSON.parse(xhr.response);
+                        alert("학생추가 완료:\n" + JSON.stringify(res, null, 2));
+                        $("#input_name1").val("");
+                        $("#input_age1").val("");
+                        $("#input_gender1").val("");
+                        $("#btn_list1").click();
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_list1").click(function(){
+                alert("학생정보를 조회하시겠습니까?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET","http://localhost:3000/students");
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        $("#div_list1").html("");
+                        res.forEach(function(each){
+                            $("#div_list1").append(
+                                `<div>${each.id} : ${each.name} (${each.age}, ${each.gender || "미입력"})</div>`
+                            );
+                        });
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+        });       
+    </script> 
+</body>
+</html>
