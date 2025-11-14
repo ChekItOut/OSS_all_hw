@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025-11-03</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         body{
             font-family: Georgia, Times, 'Times New Roman', serif;
@@ -29,14 +30,48 @@
     gender : <input type="text" id="input_gender1" /><br/>
 
     
-    
+    <div class="modal" id="modalResult" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">학생정보를 수정하시겠습니까?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Save Change를 누르면 학생정보가 수정됩니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modalResult2" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">학생을 추가하시겠습니까?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Save Change를 누르면 학생정봐 추가됩니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         $(function(){
             $("#btn_delete1").click(function(){
                 alert("학생을 삭제하시겠습니까??");
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("DELETE","http://localhost:3000/students/" + $("#input_id1").val()); //input_id1에 현재입력된값을 가진 계정을 삭제하라고 요청을 설정한다.
+                xhr.open("DELETE","https://6915405284e8bd126af93912.mockapi.io/user/" + $("#input_id1").val()); //input_id1에 현재입력된값을 가진 계정을 삭제하라고 요청을 설정한다.
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
@@ -50,10 +85,12 @@
             });
 
             $("#btn_update1").click(function(){
-                alert("학생정보를 Update 하시겠습니까?");
+                if (!confirm("학생정보를 update 하시겠습니까??")) {
+                    return; 
+                }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("PUT","http://localhost:3000/students/" + $("#input_id1").val());
+                xhr.open("PUT","https://6915405284e8bd126af93912.mockapi.io/user/" + $("#input_id1").val());
                 xhr.setRequestHeader("content-type","application/json");
                 let data = { 
                     name: $("#input_name1").val(), 
@@ -64,7 +101,12 @@
                 xhr.onload = () => {
                     if (xhr.status === 200) {
                         let res = JSON.parse(xhr.response); //서버에서 응답받은 JSON을 JS의 객체로 변환
-                        alert("학생정보 수정완료:\n" + JSON.stringify(res, null, 2));
+                        $('#modalResult').find('.modal-title').text('✅ 업데이트 완료');
+                        $('#modalResult').find('.modal-body p').html('학생 정보가 성공적으로 수정되었습니다.<br><pre>' + JSON.stringify(res, null, 2) + '</pre>');
+                        
+                        const resultModal = new bootstrap.Modal(document.getElementById('modalResult'));
+                        resultModal.show();
+
                         $("#btn_list1").click();
                     } else {
                         console.log(xhr.status, xhr.statusText);
@@ -76,7 +118,7 @@
                 alert("학생을 추가하시겠습니까?");
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST","http://localhost:3000/students");
+                xhr.open("POST","https://6915405284e8bd126af93912.mockapi.io/user/");
                 xhr.setRequestHeader("content-type","application/json");
                 let data = { 
                     name: $("#input_name1").val(), 
@@ -87,10 +129,11 @@
                 xhr.onload = () => {
                     if (xhr.status === 201) {
                         let res = JSON.parse(xhr.response);
-                        alert("학생추가 완료:\n" + JSON.stringify(res, null, 2));
-                        $("#input_name1").val("");
-                        $("#input_age1").val("");
-                        $("#input_gender1").val("");
+                        $('#modalResult2').find('.modal-title').text('✅ 학생추가 완료');     
+                        $('#modalResult2').find('.modal-body p').html('학생 정보가 성공적으로 추가되었습니다.<br><pre>' + JSON.stringify(res, null, 2) + '</pre>');
+                        const resultModal = new bootstrap.Modal(document.getElementById('modalResult2'));
+                        resultModal.show();
+
                         $("#btn_list1").click();
                     } else {
                         console.log(xhr.status, xhr.statusText);
@@ -102,7 +145,7 @@
                 alert("학생정보를 조회하시겠습니까?");
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET","http://localhost:3000/students");
+                xhr.open("GET","https://6915405284e8bd126af93912.mockapi.io/user/");
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
